@@ -4,7 +4,7 @@ public class Fibonacci_02 {
     private static final String FILE = "fibonacci.csv";
 
     public static void main(String[] args) {
-        long[] fibonacci = new long[60];
+        long[] fibonacci = new long[61];
         fibonacci[0] = 0;
         fibonacci[1] = 1;
 
