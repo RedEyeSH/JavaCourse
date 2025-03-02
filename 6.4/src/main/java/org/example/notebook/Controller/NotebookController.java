@@ -63,10 +63,12 @@ public class NotebookController {
             String newContent = contentArea.getText();
 
             if (!newTitle.isEmpty() && !newContent.isEmpty()) {
-                Note editedNote = new Note(newTitle, newContent);
+                Note selectedNote = notebook.getNotes().get(selectedIndex);
 
-                notebook.getNotes().set(selectedIndex, editedNote);
-                notesListView.getItems().set(selectedIndex, editedNote);
+                selectedNote.setTitle(newTitle);
+                selectedNote.setContent(newContent);
+
+                notesListView.getItems().set(selectedIndex, selectedNote);
 
                 clearSelection();
             }
