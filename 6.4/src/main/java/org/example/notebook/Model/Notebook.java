@@ -20,6 +20,6 @@ public class Notebook {
     }
 
     public void removeNote(Note note) {
-        notes.remove(note)  ;
+        notes.remove(note);
     }
 }
