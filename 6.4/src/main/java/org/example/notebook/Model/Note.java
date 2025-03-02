@@ -1,32 +1,35 @@
 package org.example.notebook.Model;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Note {
-    private String title;
-    private String content;
+    private StringProperty title;
+    private StringProperty content;
 
     public Note(String title, String content) {
-        this.title = title;
-        this.content = content;
+        this.title = new SimpleStringProperty(title);
+        this.content = new SimpleStringProperty(content);
     }
 
     public String getTitle() {
-        return title;
+        return title.get();
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.title.set(title);
     }
 
     public String getContent() {
-        return content;
+        return content.get();
     }
 
     public void setContent(String content) {
-        this.content = content;
+        this.content.set(content);
     }
 
     @Override
     public String toString() {
-        return title + ": " + content;
+        return getTitle() + ": " + getContent();
     }
 }

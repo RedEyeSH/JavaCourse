@@ -37,6 +37,8 @@ public class NotebookController {
         editButton.setDisable(true);
         deleteButton.setDisable(true);
 
+        notesListView.setItems(notebook.getNotes());
+
         notesListView.setOnMouseClicked(this::handleNoteSelection);
     }
 
@@ -48,8 +50,6 @@ public class NotebookController {
         if (!title.isEmpty() && !content.isEmpty()) {
             Note newNote = new Note(title, content);
             notebook.addNote(newNote);
-
-            notesListView.getItems().add(newNote);
 
             titleField.clear();
             contentArea.clear();
@@ -68,7 +68,7 @@ public class NotebookController {
                 selectedNote.setTitle(newTitle);
                 selectedNote.setContent(newContent);
 
-                notesListView.getItems().set(selectedIndex, selectedNote);
+                notesListView.refresh();
 
                 clearSelection();
             }
@@ -78,8 +78,8 @@ public class NotebookController {
     @FXML
     private void deleteNote() {
         if (selectedIndex != -1) {
-            notebook.getNotes().remove(selectedIndex);
-            notesListView.getItems().remove(selectedIndex);
+             Note selectedNote = notebook.getNotes().get(selectedIndex);
+             notebook.removeNote(selectedNote);
 
             clearSelection();
         }

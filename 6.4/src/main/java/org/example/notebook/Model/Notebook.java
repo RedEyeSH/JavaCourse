@@ -1,20 +1,25 @@
 package org.example.notebook.Model;
 
-import java.util.ArrayList;
-import java.util.List;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Notebook {
-    private List<Note> notes;
+    private ObservableList<Note> notes;
 
     public Notebook() {
-        notes = new ArrayList<>();
+        this.notes = FXCollections.observableArrayList();
+    }
+
+    public ObservableList<Note> getNotes() {
+        return notes;
     }
 
     public void addNote(Note note) {
         notes.add(note);
     }
 
-    public List<Note> getNotes() {
-        return notes;
+    public void removeNote(Note note) {
+        notes.remove(note)  ;
     }
 }
