@@ -68,8 +68,6 @@ public class NotebookController {
                 selectedNote.setTitle(newTitle);
                 selectedNote.setContent(newContent);
 
-                notesListView.refresh();
-
                 clearSelection();
             }
         }
