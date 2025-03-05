@@ -1,0 +1,64 @@
+.root {
+    -fx-font-family: "sans-serif";
+    -fx-background-color: #050816;
+}
+
+.label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-padding: 5px;
+}
+
+.text-field {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 30px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+    -fx-background-color: #151030;
+    -fx-font-weight: 700;
+    -fx-text-fill: white;
+    -fx-border-radius: 6px;
+}
+
+.combo-box {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 30px;
+    -fx-font-size: 14px;
+    -fx-background-color: #151030;
+    -fx-border-radius: 6px;
+}
+
+.combo-box:hover {
+    -fx-background-color: #261d55;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #151030;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+}
+
+.button {
+    -fx-pref-width: 250px;
+    -fx-background-color: #151030;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-font-size: 16px;
+    -fx-padding: 10px 15px;
+    -fx-border-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #201a4c;
+}
+
+.error-label {
+    -fx-text-fill: red;
+    -fx-font-size: 12px;
+}
+
+.text-field:disabled {
+    -fx-background-color: #e0e0e0;
+}
